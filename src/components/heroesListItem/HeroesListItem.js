@@ -1,4 +1,5 @@
 import { heroesDeleted } from "../../actions";
+
 const HeroesListItem = ({ name, description, element, id, dispatch }) => {
   let elementClassName;
 
@@ -21,7 +22,7 @@ const HeroesListItem = ({ name, description, element, id, dispatch }) => {
 
   return (
     <li
-      className={`card flex-row mb-4 shadow-lg text-white ${elementClassName}`}
+      className={`card flex-row mb-4 shadow-lg text-white ${elementClassName} my`}
     >
       <img
         src="http://www.stpaulsteinbach.org/wp-content/uploads/2014/09/unknown-hero.jpg"
@@ -35,7 +36,9 @@ const HeroesListItem = ({ name, description, element, id, dispatch }) => {
       </div>
       <span className="position-absolute top-0 start-100 translate-middle badge border rounded-pill bg-light">
         <button
-          onClick={() => dispatch(heroesDeleted(id))}
+          onClick={() => {
+            dispatch(heroesDeleted(id));
+          }}
           type="button"
           className="btn-close btn-close"
           aria-label="Close"

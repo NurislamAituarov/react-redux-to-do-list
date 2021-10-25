@@ -3,6 +3,7 @@ const initialState = {
   heroesLoadingStatus: "idle",
   filters: [],
   heroesFilter: [],
+  heroesElementFilter: "all",
 };
 let index = 3;
 
@@ -45,25 +46,10 @@ const reducer = (state = initialState, action) => {
         heroesFilter: [...state.heroes, newItem],
       };
     case "HEROES_FILTER_ITEM":
-      switch (action.element) {
-        case "all":
-          return {
-            ...state,
-            heroesFilter: [...state.heroes],
-          };
-        default:
-          return {
-            ...state,
-            heroesFilter: state.heroes.filter(
-              (el) => el.element === action.element
-            ),
-          };
-      }
-    //   return {
-    //     ...state,
-    //     heroes: state.heroes.filter((el) => el.element === action.element),
-    //   };
-
+      return {
+        ...state,
+        heroesElementFilter: action.element,
+      };
     default:
       return state;
   }

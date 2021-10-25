@@ -1,0 +1,34 @@
+.my {
+  transition: 1s;
+}
+.my-node-enter {
+  opacity: 0;
+  transform: translateX(-800px);
+}
+.my-node-enter-active {
+  opacity: 1;
+  /* transition: opacity 1500ms ease-in; */
+  transform: translateX(50px);
+}
+.my-node-exit {
+  opacity: 1;
+  transform: translateX(50px);
+}
+.my-node-exit-active {
+  opacity: 0;
+  /* transition: opacity 1500ms ease-in; */
+  transform: translateX(-800px);
+}
+
+/* .anim {
+  animation-name: anim;
+  animation-duration: 1.5s;
+}
+@keyframes anim {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+} */

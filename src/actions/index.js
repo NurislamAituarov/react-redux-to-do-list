@@ -39,3 +39,9 @@ export const heroesFilterItem = (element) => {
     element,
   };
 };
+
+export const counterAction = () => {
+  return {
+    type: "ONE",
+  };
+};
